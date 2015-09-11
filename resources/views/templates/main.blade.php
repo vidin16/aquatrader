@@ -19,9 +19,9 @@
 	<!-- CSS
   ================================================== -->
   	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="{{asset('stylesheets/base.css')}}">
 <!-- 	<link rel="stylesheet" href="stylesheets/skeleton.css"> -->
-	<link rel="stylesheet" href="stylesheets/layout.css">
+	<link rel="stylesheet" href="{{asset('stylesheets/layout.css')}}">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -49,12 +49,12 @@
 			<nav>
 				<ul class="group">
 					<h2 class="logo">Aquatrader <i class="icon-tint"></i></h2>
-					<li><a href="">Goldfish</a></li>
-					<li><a href="">Discus</a></li>
-					<li><a href="">Angelfish</a></li>
-					<li><a href="">Tetras</a></li>
-					<li><a href="">Cichlids</a></li>
-					<li><a href="">Plants</a></li>
+					
+					@foreach(\App\Models\Type::all() as $type) <!-- gives all types from database -->
+					<li><a href="{{url('types/'.$type->id)}}">{{$type->name}}</a></li>
+					<!-- url like assets function -->
+					@endforeach()
+
 					<li class="clear"><a href="">Account <i class="icon-user"></i></a></li>
 					<li><a href="">Login <i class="icon-lock"></i></a></li>
 					<li><a href="" >2 items <i class="icon-shopping-cart"></i></a></li>

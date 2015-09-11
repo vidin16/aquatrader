@@ -14,4 +14,6 @@ class Product extends Model
 	public function orders(){
 		return $this->belongsToMany("App\Models\Order");
 	}
+
+	protected $fillable = ['name', 'description', 'photo', 'price', 'type_id'];
 }
