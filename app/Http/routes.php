@@ -79,6 +79,14 @@ Route::post('products', function(\App\Http\Requests\CreateProductRequest $reques
 
 	$product = \App\Models\Product::create($request->all());
 
+	//move file for tempt location to productPhotos(folders name)
+	$fileName = \Carbon\Carbon::now()->timestamp."_product.jpg";
+
+	$request->file('photo')->move('productphotos', $fileName);
+
+	$product->photo = $fileName;
+	$product->save();
+
 	return redirect('types/'.$product->type->id);
 });
 
@@ -116,6 +124,10 @@ Route::get('users/{id}', function($id){
 Route::post('users', function(\App\Http\Requests\CreateUserRequest $request){
 
 	$user = \App\Models\User::create($request->all());
+
+	//encrypt password
+	$user->password = bcrypt($user->password);
+	$user->save();
 
 	return redirect('users/'.$user->id);
 });

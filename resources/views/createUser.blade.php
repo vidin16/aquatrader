@@ -19,6 +19,14 @@
 
 					{!! Form::label('email', 'Email') !!}
 					{!! Form::text('email') !!}
+
+					{!! Form::label('password', 'Password') !!}
+					{!! Form::password('password') !!}
+					{!! $errors->first('password','<p class="error">:message</p>') !!}
+
+					{!! Form::label('password_confirmation', 'Confirm Password') !!}
+					{!! Form::password('password_confirmation') !!}
+					{!! $errors->first('password_confirmation','<p class="error">:message</p>') !!}
 	
 					<input type="submit" value="Register">
 				</fielset>

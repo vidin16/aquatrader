@@ -10,7 +10,7 @@
 					{!! $errors->first('username','<p class="error">:message</p>') !!} 
 
 					{!! Form::label('firstname', 'First name') !!}
-					{!! Form::textarea('firstname') !!}
+					{!! Form::text('firstname') !!}
 					{!! $errors->first('firstname','<p class="error">:message</p>') !!}
 
 					{!! Form::label('lastname', 'Last name') !!}
@@ -21,7 +21,7 @@
 					{!! Form::text('email') !!}
 					{!! $errors->first('email','<p class="error">:message</p>') !!}
 	
-					<input type="submit" value="Update product">
+					<input type="submit" value="Update">
 				</fielset>
 			{!! Form::close() !!}
 @stop	
