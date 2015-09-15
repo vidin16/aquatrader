@@ -26,8 +26,7 @@ class UpdateProductRequest extends Request
         return [
             "name"=>"required", 
             "description"=>"required",
-            "price"=>"required",
-            "photo"=>"required"
+            "price"=>"required"
         ];
     }
 }
