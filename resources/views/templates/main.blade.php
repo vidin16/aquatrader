@@ -54,12 +54,21 @@
 					<li><a href="{{url('types/'.$type->id)}}">{{$type->name}}</a></li>
 					<!-- url like assets function -->
 					@endforeach()
+					
+					@if(Auth::check())
 
-					<li class="clear"><a href="">Account <i class="icon-user"></i></a></li>
-					<li><a href="">Login <i class="icon-lock"></i></a></li>
+					<li class="clear"><a href="{{url('users/'.Auth::user()->id)}}">Account <i class="icon-user"></i></a></li>
+					<li><a href="{{url('logout')}}">Logout <i class="icon-lock"></i></a></li>
+
+					@else
+
+					<li><a href="{{url('login')}}">Login <i class="icon-lock"></i></a></li>
+					<li><a href="{{url('users/create')}}">Register <i class="icon-lock"></i></a></li>
+					@endif
+
 					<li><a href="" >2 items <i class="icon-shopping-cart"></i></a></li>
-					<li><a href="">About</a></li>
-					<li><a href="">Contact</a></li>
+					<li><a href="{{url('about')}}">About</a></li>
+					<li><a href="{{url('contact')}}">Contact</a></li>
 					
 				</ul>
 			</nav>

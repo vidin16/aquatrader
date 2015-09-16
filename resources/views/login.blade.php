@@ -16,5 +16,7 @@
 					<input type="submit" value="Login">
 				</fielset>
 			{!! Form::close() !!}
+
+			{{Session::get("message")}}
 @stop	
 
