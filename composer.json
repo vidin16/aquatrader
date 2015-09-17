@@ -4,11 +4,15 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+
+    "minimum-stability" : "dev",
+
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "laravelcollective/html": "5.1.*",
-        "nestbot/carbon": "~1.14"
+        "nesbot/carbon": "~1.14",
+        "moltin/laravel-cart": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
