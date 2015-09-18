@@ -22,8 +22,10 @@
 				</div>
 			</div>
 
-			<form method="POST" action="">
+			{!! Form::open(["url"=>"orders"]) !!}
+
 				<input type="submit" value="Checkout">
-			</form>
+
+			{!! Form::close() !!}
 @stop	
 

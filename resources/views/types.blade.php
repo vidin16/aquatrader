@@ -9,7 +9,7 @@
 					<h4>{{$product->name}}</h4>
 					<p>{{$product->description}}</p>
 					<span class="price"><i class="icon-dollar"></i>{{$product->price}}</span>
-					<span class="addtocart"><i class="icon-plus"></i></span>
+					<span class="addtocart"><a href="{{url('products/'.$product->id)}}"><i class="icon-plus"></i></a></span>
 				</article>
 			@endforeach
 @stop

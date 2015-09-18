@@ -59,6 +59,8 @@ Route::post('login', "LoginController@processLogin");
 Route::get('logout', "LoginController@logout");
 
 Route::get('cart', "CartController@showCart");
+Route::post('cartItems', "CartController@addItem");
+Route::post('orders', "CartController@checkout");
 
 Route::get('types/{id}', function($id){ // create types controller and put it under show//
 
